@@ -2,9 +2,9 @@ package com.company;
 
 
 public class Book {
-    private String nameOfBook;
+    final private String nameOfBook;
     private int yearOfPublish;
-    private Author author;
+    final private Author author;
 
     public Book(Author author,String nameOfBook,int yearOfPublish){
         this.author=author;
