@@ -1,6 +1,8 @@
 package com.company;
 
 
+import java.util.Objects;
+
 public class Book {
     final private String nameOfBook;
     private int yearOfPublish;
@@ -28,6 +30,23 @@ public class Book {
         this.yearOfPublish=yearOfPublish;
     }
 
+    @Override
+    public String toString() {
+        return  author + ": " + nameOfBook +" " + yearOfPublish + " year";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return nameOfBook.equals(book.nameOfBook);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nameOfBook);
+    }
 }
 
 
